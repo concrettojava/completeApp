@@ -30,7 +30,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_import">
        <attribute name="title">
@@ -68,7 +68,14 @@
             </layout>
            </item>
            <item>
-            <widget class="QListView" name="csvList"/>
+            <widget class="QTextEdit" name="textEdit">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>请确保所有的数据文件放在一个文件夹下</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -104,7 +111,14 @@
             </layout>
            </item>
            <item>
-            <widget class="QListView" name="videoList"/>
+            <widget class="QTextEdit" name="textEdit_2">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>请确保路径下包含两个NVR和高速摄像机两个文件夹</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
