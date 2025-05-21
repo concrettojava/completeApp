@@ -30,7 +30,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_import">
        <attribute name="title">
@@ -53,13 +53,6 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_remove_csv">
-               <property name="text">
-                <string>移除选中</string>
-               </property>
-              </widget>
-             </item>
-             <item>
               <spacer name="csv_spacer">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -75,7 +68,7 @@
             </layout>
            </item>
            <item>
-            <widget class="QListWidget" name="list_csv_files"/>
+            <widget class="QListView" name="listView"/>
            </item>
           </layout>
          </widget>
@@ -111,7 +104,7 @@
             </layout>
            </item>
            <item>
-            <widget class="QTextEdit" name="textEdit"/>
+            <widget class="QListView" name="listView_2"/>
            </item>
           </layout>
          </widget>
@@ -186,7 +179,7 @@
           <item>
            <widget class="QTabWidget" name="videoArea">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="tab">
              <attribute name="title">
