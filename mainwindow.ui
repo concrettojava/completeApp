@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>630</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>实验回溯系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_import">
+       <attribute name="title">
+        <string>数据导入</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="import_layout">
+        <item>
+         <widget class="QGroupBox" name="csv_group">
+          <property name="title">
+           <string>数据文件读取</string>
+          </property>
+          <layout class="QVBoxLayout" name="csv_layout">
+           <item>
+            <layout class="QHBoxLayout" name="csv_select_layout">
+             <item>
+              <widget class="QPushButton" name="btn_add_csv">
+               <property name="text">
+                <string>添加控制文件</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_remove_csv">
+               <property name="text">
+                <string>移除选中</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="csv_spacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListWidget" name="list_csv_files"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="video_group">
+          <property name="title">
+           <string>高速相机与NVR读取</string>
+          </property>
+          <layout class="QVBoxLayout" name="video_layout">
+           <item>
+            <layout class="QHBoxLayout" name="video_select_layout">
+             <item>
+              <widget class="QPushButton" name="btn_select_video_folder">
+               <property name="text">
+                <string>选择视频文件夹</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="textEdit"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="output_group">
+          <property name="title">
+           <string>输出设置</string>
+          </property>
+          <layout class="QVBoxLayout" name="output_layout">
+           <item>
+            <layout class="QHBoxLayout" name="output_select_layout">
+             <item>
+              <widget class="QLineEdit" name="edit_output_path">
+               <property name="placeholderText">
+                <string>选择数据库保存路径</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_select_output">
+               <property name="text">
+                <string>浏览...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="text">
+                <string>生成数据库文件</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QProgressBar" name="progress_import">
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="text_import_log">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>导入日志将在此显示...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_display">
+       <attribute name="title">
+        <string>实验回放</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="display_layout">
+        <item>
+         <layout class="QHBoxLayout" name="main_content_layout">
+          <item>
+           <layout class="QVBoxLayout" name="video_layout">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <item>
+             <widget class="QScrollArea" name="scroll_video">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scroll_video_content">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>466</width>
+                 <height>491</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="data_panel_layout">
+            <item>
+             <widget class="QTabWidget" name="tab_data_panel">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="tab_status_data">
+               <attribute name="title">
+                <string>状态数据</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="status_layout">
+                <item>
+                 <widget class="QTableWidget" name="table_status_data">
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="tab_experiment_data">
+               <attribute name="title">
+                <string>实验数据</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="experiment_layout">
+                <item>
+                 <widget class="QTableWidget" name="table_experiment_data">
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="tab_annotations">
+               <attribute name="title">
+                <string>标注列表</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="annotations_layout">
+                <item>
+                 <widget class="QTableWidget" name="table_annotations">
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="annotation_buttons">
+                  <item>
+                   <widget class="QPushButton" name="btn_edit_annotation">
+                    <property name="text">
+                     <string>编辑</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_delete_annotation">
+                    <property name="text">
+                     <string>删除</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="annotation_spacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="controls_layout">
+          <item>
+           <layout class="QHBoxLayout" name="playback_controls">
+            <item>
+             <widget class="QPushButton" name="btn_play_pause">
+              <property name="text">
+               <string>播放/暂停</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_position">
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_time">
+              <property name="text">
+               <string>00:00 / 00:00</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="playSpeedControl"/>
+            </item>
+            <item>
+             <spacer name="speed_spacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_export">
+       <attribute name="title">
+        <string>实验导出</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="export_layout">
+        <item>
+         <widget class="QLabel" name="label_export_placeholder">
+          <property name="text">
+           <string>导出功能开发中...</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <action name="action_open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
