@@ -30,7 +30,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_import">
        <attribute name="title">
@@ -68,7 +68,7 @@
             </layout>
            </item>
            <item>
-            <widget class="QListView" name="listView"/>
+            <widget class="QListView" name="csvList"/>
            </item>
           </layout>
          </widget>
@@ -104,7 +104,7 @@
             </layout>
            </item>
            <item>
-            <widget class="QListView" name="listView_2"/>
+            <widget class="QListView" name="videoList"/>
            </item>
           </layout>
          </widget>
@@ -132,7 +132,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="dbCreate">
                <property name="text">
                 <string>生成数据库文件</string>
                </property>
@@ -179,7 +179,7 @@
           <item>
            <widget class="QTabWidget" name="videoArea">
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab">
              <attribute name="title">
