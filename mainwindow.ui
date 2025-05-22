@@ -36,39 +36,66 @@
        <attribute name="title">
         <string>数据导入</string>
        </attribute>
-       <layout class="QVBoxLayout" name="import_layout">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
          <widget class="QGroupBox" name="csv_group">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="title">
            <string>数据文件读取</string>
           </property>
           <layout class="QVBoxLayout" name="csv_layout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <layout class="QHBoxLayout" name="csv_select_layout">
              <item>
               <widget class="QPushButton" name="btn_add_csv">
                <property name="text">
-                <string>添加控制文件</string>
+                <string>选择数据文件夹</string>
                </property>
               </widget>
              </item>
              <item>
-              <spacer name="csv_spacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+              <widget class="QLineEdit" name="csv_path_line">
+               <property name="dragEnabled">
+                <bool>true</bool>
                </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
+               <property name="readOnly">
+                <bool>true</bool>
                </property>
-              </spacer>
+              </widget>
              </item>
             </layout>
            </item>
            <item>
-            <widget class="QTextEdit" name="textEdit">
+            <widget class="QTextEdit" name="csv_log">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>
@@ -81,44 +108,103 @@
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="video_group">
-          <property name="title">
-           <string>高速相机与NVR读取</string>
+         <widget class="QGroupBox" name="videoGroup">
+          <property name="autoFillBackground">
+           <bool>false</bool>
           </property>
-          <layout class="QVBoxLayout" name="video_layout">
+          <property name="title">
+           <string>视频文件读取并保存于本地</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
-            <layout class="QHBoxLayout" name="video_select_layout">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>
-              <widget class="QPushButton" name="btn_select_video_folder">
-               <property name="text">
-                <string>选择视频文件夹</string>
+              <widget class="QLineEdit" name="nvr_lineEdit">
+               <property name="placeholderText">
+                <string>nvr读取协议</string>
                </property>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+              <widget class="QPushButton" name="nvr_testBtn">
+               <property name="text">
+                <string>测试</string>
                </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
+              </widget>
              </item>
             </layout>
            </item>
            <item>
-            <widget class="QTextEdit" name="textEdit_2">
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
-              <string>请确保路径下包含两个NVR和高速摄像机两个文件夹</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLineEdit" name="camera_lineEdit">
+               <property name="placeholderText">
+                <string>高速摄像机协议</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="camera_textBtn">
+               <property name="text">
+                <string>测试</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLineEdit" name="video_save_path_lineEdit">
+               <property name="placeholderText">
+                <string>视频文件保存路径</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="video_save_path_browseBtn">
+               <property name="text">
+                <string>浏览</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QProgressBar" name="video_collect_progressBar">
+               <property name="value">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="video_collectBtn">
+               <property name="text">
+                <string>开始导出</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="collection_progressBar"/>
            </item>
           </layout>
          </widget>
@@ -132,14 +218,14 @@
            <item>
             <layout class="QHBoxLayout" name="output_select_layout">
              <item>
-              <widget class="QLineEdit" name="edit_output_path">
+              <widget class="QLineEdit" name="db_save_path_lineEdit">
                <property name="placeholderText">
-                <string>选择数据库保存路径</string>
+                <string>选择数据库保存地址</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_select_output">
+              <widget class="QPushButton" name="db_save_pathBtn">
                <property name="text">
                 <string>浏览...</string>
                </property>
@@ -160,12 +246,18 @@
         <item>
          <widget class="QProgressBar" name="progress_import">
           <property name="value">
-           <number>0</number>
+           <number>15</number>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QTextEdit" name="text_import_log">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="readOnly">
            <bool>true</bool>
           </property>
