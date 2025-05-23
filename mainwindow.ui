@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>630</height>
+    <width>1200</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -159,7 +159,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="camera_textBtn">
+              <widget class="QPushButton" name="camera_testBtn">
                <property name="text">
                 <string>测试</string>
                </property>
@@ -171,6 +171,9 @@
             <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
               <widget class="QLineEdit" name="video_save_path_lineEdit">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
                <property name="placeholderText">
                 <string>视频文件保存路径</string>
                </property>
@@ -204,7 +207,7 @@
             </layout>
            </item>
            <item>
-            <widget class="QTextEdit" name="collection_progressBar"/>
+            <widget class="QTextEdit" name="video_save_log"/>
            </item>
           </layout>
          </widget>
@@ -219,6 +222,12 @@
             <layout class="QHBoxLayout" name="output_select_layout">
              <item>
               <widget class="QLineEdit" name="db_save_path_lineEdit">
+               <property name="dragEnabled">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
                <property name="placeholderText">
                 <string>选择数据库保存地址</string>
                </property>
