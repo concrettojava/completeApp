@@ -134,16 +134,17 @@ void ImportHandler::on_video_collectBtn_clicked() {
     QString cameraPath = ui->camera_lineEdit->text().trimmed();
     QString savePath = ui->video_save_path_lineEdit->text().trimmed();
 
-    if (ui->nvr_lineEdit->styleSheet().contains("background-color: green", Qt::CaseInsensitive)) {
-        QMessageBox::warning(nullptr, "错误", "NVR读取尚未确认");
+    if (!ui->nvr_lineEdit->styleSheet().contains("background-color: green")) {
+        QMessageBox::warning(nullptr, "错误", "NVR读取尚未有效确认");
         return;
     }
-    if (ui->camera_lineEdit->styleSheet().contains("background-color: green", Qt::CaseInsensitive)) {
-        QMessageBox::warning(nullptr, "错误", "高速摄像机读取尚未确认");
+    if (!ui->camera_lineEdit->styleSheet().contains("background-color: green")) {
+        QMessageBox::warning(nullptr, "错误", "高速摄像机读取尚未有效确认");
         return;
     }
-    if (ui->video_save_path_lineEdit->styleSheet().contains("background-color: green", Qt::CaseInsensitive)) {
-        QMessageBox::warning(nullptr, "错误", "视频保存路径未设置");
+    qDebug()<< ui->video_save_path_lineEdit->styleSheet();
+    if (!ui->video_save_path_lineEdit->styleSheet().contains("green")) {
+        QMessageBox::warning(nullptr, "错误", "视频保存路径未有效设置");
         return;
     }
 

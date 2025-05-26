@@ -28,9 +28,9 @@ private:
     QFileInfoList csvInfoList;
     QFileInfoList nvrInfoList;
     QFileInfoList cameraInfoList;
-    bool nvr_checked = false;
-    bool camera_checked = false;
-    bool video_path_ready = false;
+    // bool nvr_checked = false;
+    // bool camera_checked = false;
+    // bool video_path_ready = false;
     QString videoSavePath;
 };
 
