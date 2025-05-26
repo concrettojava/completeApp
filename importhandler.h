@@ -1,5 +1,5 @@
-#ifndef IMPORTTABHANDLER_H
-#define IMPORTTABHANDLER_H
+#ifndef IMPORTHANDLER_H
+#define IMPORTHANDLER_H
 
 #include <QObject>
 #include "qfileinfo.h"
@@ -19,11 +19,16 @@ private slots:
     void on_video_save_path_browseBtn_clicked();
     void on_video_collectBtn_clicked();
 
+    void on_db_save_path_browseBtn_clicked();
+    void on_generate_database_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     void displayCsvFileInfo(const QString &folderPath);
     QString formatFileSize(qint64 size);
+
+    void createDatabase();
 
     QFileInfoList csvInfoList;
     QFileInfoList nvrInfoList;
@@ -32,6 +37,8 @@ private:
     // bool camera_checked = false;
     // bool video_path_ready = false;
     QString videoSavePath;
+
+    QString dbSavePath;
 };
 
-#endif // IMPORTTABHANDLER_H
+#endif // IMPORTHANDLER_H

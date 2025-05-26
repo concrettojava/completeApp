@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "importtabhandler.h"
+#include "importhandler.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
